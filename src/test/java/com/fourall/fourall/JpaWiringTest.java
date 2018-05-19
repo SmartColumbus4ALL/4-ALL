@@ -49,4 +49,5 @@ public class JpaWiringTest {
 		assertThat(testReport.getIssue(), is(testIssueType));
 
 	}
+
 }
