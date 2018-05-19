@@ -5,8 +5,14 @@ body{
     display: grid;
     grid-template-rows: 3fr;
 }
-.title{
-    grid-row: 0/1;
+.header{
+     grid-row: 0/1;
+}
+.mainsection{
+    grid-row: 2/3;
+}
+.footer{
+   
 }
 ul li{
     list-style-type: none;
