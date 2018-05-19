@@ -2,6 +2,11 @@ body{
     margin: 10px;
     padding: 5px;
     text-align: center;
+    display: grid;
+    grid-template-rows: 3fr;
+}
+.title{
+    grid-row: 0/1;
 }
 ul li{
     list-style-type: none;
@@ -11,4 +16,16 @@ button li{
 }
 button{
 	margin: 35px;
+}
+.backbutton{
+    text-align: left;
+    bottom:0;
+    position: fixed;
+}
+a{
+    text-decoration: none;
+}
+
+footer{
+    bottom: 5;
 }
