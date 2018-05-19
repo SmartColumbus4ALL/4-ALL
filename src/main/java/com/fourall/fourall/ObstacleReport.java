@@ -2,15 +2,23 @@ package com.fourall.fourall;
 
 import java.time.LocalDate;
 
-public class ObstacleReport {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-	private long id;
+@Entity
+public class ObstacleReport {
+	@Id
+	@GeneratedValue
+	private Long id;
 	private double latitude;
 	private double longitude;
 
 	private String streetAddress = null;
 	private String businessName = null;
 	private LocalDate reportDate;
+	@ManyToOne
 	private IssueType issue;
 
 	public ObstacleReport(double latitude, double longitude, LocalDate reportDate, IssueType issue) {
@@ -79,6 +87,10 @@ public class ObstacleReport {
 		public double getLongitude() {
 			return longitude;
 		}
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 }
