@@ -23,6 +23,7 @@ button img{
 
 button span {
   display: block;
+  text-transform: capitalize;
 }
 
 button:focus {
