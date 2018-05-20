@@ -7,18 +7,31 @@ body{
 }
 .header{
      grid-row: 0/1;
+     text-align: center;
 }
+.header img{
+	width:175px;
+	height: auto;
+}
+button img{
+	width:65px;
+	height:auto;
+} 
+
 .mainsection{
     grid-row: 2/3;
 }
-.footer{
-   
+footer{
+   font-size: 10px;
+}
+ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding:0;
 }
 ul li{
     list-style-type: none;
-}
-button li{
-	padding: 10px;
 }
 button{
 	margin: 35px;
