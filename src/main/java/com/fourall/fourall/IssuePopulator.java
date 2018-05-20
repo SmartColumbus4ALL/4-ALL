@@ -17,24 +17,24 @@ public class IssuePopulator implements CommandLineRunner {
 		issueTypeRepo.save(new IssueType("outdoor", "sidewalk", "Missing Sidewalk", "City Planning"));
 		issueTypeRepo.save(new IssueType("outdoor", "sidewalk", "Other", "City Planning"));
 		issueTypeRepo.save(new IssueType("outdoor", "ramp", "Entrance not Accessable", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "ramp", "damaged", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "ramp", "no ramp", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "ramp", "other", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "ramp", "Damaged", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "ramp", "No Ramp", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "ramp", "Other", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "handrail", "Missing Handrail", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "handrail", "Other", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "handrail", "damaged", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "handrail", "Damaged", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "curb", "Other", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "curb", "damaged", "Curb repair"));
-		issueTypeRepo.save(new IssueType("outdoor", "curb", "no curb", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "doors", "damaged", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "doors", "missing handle", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "doors", "handicap switch", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "curb", "Damaged", "Curb repair"));
+		issueTypeRepo.save(new IssueType("outdoor", "curb", "No Curb", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "doors", "Damaged", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "doors", "Missing Handle", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "doors", "Handicap Switch", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "doors", "Other", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("indoor", "handrail", "missing", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("indoor", "handrail", "Missing", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("indoor", "handrail", "Other", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("indoor", "haindrail", "damaged", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("indoor", "ramp", "damaged", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("indoor", "ramp", "missing", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("indoor", "handrail", "Damaged", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("indoor", "ramp", "Damaged", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("indoor", "ramp", "Missing", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("indoor", "ramp", "Other", "Code Enforcement"));
 
 	}
