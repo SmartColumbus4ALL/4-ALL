@@ -4,16 +4,21 @@
 	<title>All Reports</title>
 </head>
 <body>
-	<div class="reports-list" th:each="report: ${reports}">
-		<section class="report">
-			<p th:text="${report.latitude}"></p>
-			<p th:text="${report.longitude}"></p>
-			<p th:text="${report.date}"></p>
-			<p th:text="${report.issue.typeOfIssue}"></p>
-			<p>---------</p>
-		</section>
-	</div>
-	
-
+  <table class="reports-list" style="width: 100%">
+    <tr style="width: 100%">
+      <td style="width: 20%">LATITUDE</td>
+      <td style="width: 20%">LONGITUDE</td>
+      <td style="width: 20%">DATE</td>
+      <td style="width: 20%">TYPE OF ISSUE</td>
+    </tr>
+  </table>
+	<table class="reports-list" th:each="report: ${reports}" style="width: 100%">
+		<tr class="report" style="width: 100%">
+			<td style="width: 20%" th:text="${report.latitude}">423</td>
+			<td style="width: 20%" th:text="${report.longitude}">4234</td>
+			<td style="width: 20%" th:text="${report.date}">4233434</td>
+			<td style="width: 20%" th:text="${report.issue.typeOfIssue}">24332</td>
+      </tr>
+  </table>
 </body>
 </html>
