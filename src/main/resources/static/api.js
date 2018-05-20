@@ -1,23 +1,11 @@
 
 let reportedObject = {};
 
-function showPosition(position) {
-  let location = {};
-  location.latitude = position.coords.latitude;
-  location.longitude = position.coords.longitude;
-
-  return location;
-}
-
-function getLocation() {
-  if (navigator.geolocation) {
-    return navigator.geolocation.getCurrentPosition(showPosition);
-  }
-  return null;
-}
-
-function sendReport(issueId) {
+function positionCallback(position) {
   let request = new XMLHttpRequest();
+
+  reportedObject.latitude = position.coords.latitude;
+  reportedObject.longitude = position.coords.longitude;
 
   request.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
@@ -35,6 +23,21 @@ function sendReport(issueId) {
     }
   }
 
+  request.open("POST", '/api/report', true);
+  request.setRequestHeader("Content-type", "application/json");
+  request.setRequestHeader("Accept", "application/json");
+  request.send(JSON.stringify(reportedObject));
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(positionCallback);
+  } else {
+    alert('browser not supported');
+  }
+}
+
+function sendReport(issueId) {
   // {
   //   "latitude" : "39.959946",
   //   "longitude" : "-83.00044439999999",
@@ -43,21 +46,7 @@ function sendReport(issueId) {
   // }
   reportedObject.issueId = issueId;
   reportedObject.streetAddress = null;
-  let location = getLocation();
-
-  if(location) {
-    reportedObject.latitude = location.latitude;
-    reportedObject.longitude = location.longitude;
-  } else {
-    // Should not be hit
-    reportedObject.latitude = null;
-    reportedObject.longitude = null;
-  }
-
-  request.open("POST", '/api/report', true);
-  request.setRequestHeader("Content-type", "application/json");
-  request.setRequestHeader("Accept", "application/json");
-  request.send(JSON.stringify(reportedObject));
+  getLocation();
 }
 
 function getIssueTypes(environment, category) {
