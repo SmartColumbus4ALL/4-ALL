@@ -29,7 +29,7 @@ function sendReport(issueId) {
       
       let topLevel = document.getElementById('top-level');
       topLevel.style = "display: block";
-    } else {
+    } else if (this.readyState === 4 && (this.status === 500 && this.status === 403)) {
       console.log('thanks for reporting');
       alert('Uh Oh. Something went wrong');
     }
