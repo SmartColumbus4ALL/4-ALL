@@ -24,7 +24,7 @@ repositories {
 
 
 dependencies {
-	
+
   	compile('com.drewnoakes:metadata-extractor:2.11.0')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
@@ -32,6 +32,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-mobile')
 	runtime('org.springframework.boot:spring-boot-devtools')
-	runtime('com.h2database:h2')
+	runtime('org.postgresql:postgresql:42.2.2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
