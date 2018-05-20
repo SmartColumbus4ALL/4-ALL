@@ -22,7 +22,7 @@ public class JpaWiringTest {
 	@Resource
 	private ObstacleReportRepository obstacleReportRepo;
 
-	IssueType testIssueType = new IssueType("Test", "Mock");
+	IssueType testIssueType = new IssueType("Test Catergory", "Test", "Mock");
 
 	@Before
 	public void setup() {
@@ -40,7 +40,7 @@ public class JpaWiringTest {
 
 	@Test
 	public void shouldSaveAndLoadObstacleReport() {
-		ObstacleReport testReport = new ObstacleReport(42.0, 42.0, null, testIssueType);
+		ObstacleReport testReport = new ObstacleReport(42.0, 42.0, null, null, testIssueType);
 		testReport = obstacleReportRepo.save(testReport);
 		Long testReportId = testReport.getId();
 		entityManager.flush(); // forces pending stuff to happen?

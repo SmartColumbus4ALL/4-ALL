@@ -28,27 +28,24 @@ public class ObstacleReport {
 	private double longitude;
 
 	private String streetAddress = null;
-	private String businessName = null;
 	private LocalDate reportDate;
 	@ManyToOne
 	private IssueType issue;
 
-	public ObstacleReport(double latitude, double longitude, LocalDate reportDate, IssueType issue) {
+	public ObstacleReport(double latitude, double longitude, String streetAddress, LocalDate reportDate,
+			IssueType issue) {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.reportDate = reportDate;
 		this.issue = issue;
+		if (streetAddress != null) {
+			this.streetAddress = streetAddress;
+			GeoData geoData = generateGeoData(this.streetAddress);
+			this.latitude = geoData.getLatitude();
+			this.longitude = geoData.getLongitude();
 
-	}
+		}
 
-	public ObstacleReport(String businessName, String streetAddress, LocalDate reportDate, IssueType issue) {
-		this.businessName = businessName;
-		this.streetAddress = streetAddress;
-		this.reportDate = reportDate;
-		this.issue = issue;
-		GeoData geoData = generateGeoData(businessName, streetAddress);
-		latitude = geoData.getLatitude();
-		longitude = geoData.getLongitude();
 	}
 
 	public ObstacleReport() {
@@ -66,10 +63,6 @@ public class ObstacleReport {
 		return streetAddress;
 	}
 
-	public String getBusinessName() {
-		return businessName;
-	}
-
 	public LocalDate getReportDate() {
 		return reportDate;
 	}
@@ -78,8 +71,8 @@ public class ObstacleReport {
 		return issue;
 	}
 
-	private GeoData generateGeoData(String businessName, String streetAddress) {
-		// TODO fix this mock up
+	private GeoData generateGeoData(String streetAddress) {
+
 		RestTemplate restTemplate = new RestTemplate();
 
 		List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
