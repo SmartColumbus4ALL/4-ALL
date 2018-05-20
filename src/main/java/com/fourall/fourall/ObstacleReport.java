@@ -39,13 +39,12 @@ public class ObstacleReport {
 		this.longitude = longitude;
 		this.reportDate = reportDate;
 		this.issue = issue;
-		if (streetAddress != null || streetAddress == "") {
-			this.streetAddress = streetAddress;
-			GeoData geoData = generateGeoData(this.streetAddress);
-			this.latitude = geoData.getLatitude();
-			this.longitude = geoData.getLongitude();
-
-		}
+		// if (streetAddress != null || streetAddress == "") {
+		// this.streetAddress = streetAddress;
+		// GeoData geoData = generateGeoData(this.streetAddress);
+		// this.latitude = geoData.getLatitude();
+		// this.longitude = geoData.getLongitude();
+		// }
 
 	}
 
