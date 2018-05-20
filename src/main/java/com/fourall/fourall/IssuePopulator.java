@@ -37,6 +37,8 @@ public class IssuePopulator implements CommandLineRunner {
 		issueTypeRepo.save(new IssueType("indoor", "ramp", "Missing", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("indoor", "ramp", "Other", "Code Enforcement"));
 
+
+
 	}
 
 }
