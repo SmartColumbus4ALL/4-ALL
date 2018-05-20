@@ -24,9 +24,9 @@ public class IssuePopulator implements CommandLineRunner {
 		issueTypeRepo.save(new IssueType("outdoor", "rail", "Missing Handrail", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "rail", "Other", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "rail", "Damaged", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "curb", "Other", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "curb", "Damaged", "Curb repair"));
-		issueTypeRepo.save(new IssueType("outdoor", "curb", "No Curb", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "curbs", "Other", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "curbs", "Damaged", "Curb repair"));
+		issueTypeRepo.save(new IssueType("outdoor", "curbs", "No Curb", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "doors", "Damaged", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "doors", "Missing Handle", "Code Enforcement"));
 		issueTypeRepo.save(new IssueType("outdoor", "doors", "Handicap Switch", "Code Enforcement"));
