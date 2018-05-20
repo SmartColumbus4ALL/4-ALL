@@ -22,7 +22,7 @@ function sendReport(issueId) {
   request.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
       console.log('thanks for reporting');
-      alert('thank you for the feedback');
+      alert('Thank you for the feedback');
       
       let typeOfIssues = document.getElementById('typeOfIssues');
       typeOfIssues.style = "display: none";
