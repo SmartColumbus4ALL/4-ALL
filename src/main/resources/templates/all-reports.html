@@ -6,13 +6,11 @@
 <body>
 	<div class="reports-list" th:each="report: ${reports}">
 		<section class="report">
-			<h3 class="category-title">
-				<p th:text="${report.latitude}"></p>
-				<p th:text="${report.longitude}"></p>
-				<p th:text="${report.date}"></p>
-				<p th:text="${report.latitude}"></p>
-
-			</h3>
+			<p th:text="${report.latitude}"></p>
+			<p th:text="${report.longitude}"></p>
+			<p th:text="${report.date}"></p>
+			<p th:text="${report.issue.typeOfIssue}"></p>
+			<p>---------</p>
 		</section>
 	</div>
 	
