@@ -59,11 +59,11 @@ button{
 footer{
   position: absolute;
   display: flex;
-  bottom: 0;
+  bottom: 5px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 98%;
 }
 
 footer h3 {
