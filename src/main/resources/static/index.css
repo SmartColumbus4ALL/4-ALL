@@ -13,38 +13,63 @@ body{
 	width:175px;
 	height: auto;
 }
+
+
 button img{
 	width:65px;
-	height:auto;
+  height:auto;
+  padding-top: 4px;
 } 
+
+button span {
+  display: block;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  background-color:#E0E0E0;
+}
 
 .mainsection{
     grid-row: 2/3;
 }
+
 footer{
    font-size: 10px;
 }
-ul{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding:0;
-}
-ul li{
-    list-style-type: none;
-}
+
 button{
-	margin: 35px;
+  margin: 35px;
+  border-radius: 15px;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: #E0E0E0 0px 3px 6px;
 }
+
 .backbutton{
     text-align: left;
     bottom:0;
     position: fixed;
 }
-a{
-    text-decoration: none;
-}
 
 footer{
-    bottom: 5;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+footer h3 {
+  margin-bottom: 3px;
+}
+
+footer h3,
+footer p {
+  margin: 0;
 }
