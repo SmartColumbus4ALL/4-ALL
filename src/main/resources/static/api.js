@@ -21,8 +21,17 @@ function sendReport(issueId) {
 
   request.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
-    // TODO add thank you message
-    console.log('thanks for reporting');
+      console.log('thanks for reporting');
+      alert('thank you for the feedback');
+      
+      let typeOfIssues = document.getElementById('typeOfIssues');
+      typeOfIssues.style = "display: none";
+      
+      let topLevel = document.getElementById('top-level');
+      topLevel.style = "display: block";
+    } else {
+      console.log('thanks for reporting');
+      alert('Uh Oh. Something went wrong');
     }
   }
 
