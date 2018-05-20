@@ -26,6 +26,36 @@ public class ObstacleReportController {
 		return issueTypeRepo.findAll();
 	}
 
+	@RequestMapping("/api/issues/environments")
+	public Set<String> retrieveIssueEnvironments() {
+		Set<String> issueEnvironments = new HashSet<String>();
+		for (IssueType issue : issueTypeRepo.findAll()) {
+			issueEnvironments.add(issue.getIssueEnvironment());
+		}
+		return issueEnvironments;
+	}
+
+	@RequestMapping("/api/issues/{environment}/categories")
+	public Set<String> retrieveIssueCategoriesByEnvironment(
+			@PathVariable(name = "environment") String issueEnvironment) {
+		Set<String> categories = new HashSet<String>();
+		for (IssueType issue : issueTypeRepo.findAllByIssueEnvironment(issueEnvironment)) {
+			categories.add(issue.getIssueCategory());
+		}
+		return categories;
+	}
+
+	@RequestMapping("/api/issues/{enviroment}/{category}")
+	public Set<IssueType> retriveIssuesByCategoriesByEnviroment(
+			@PathVariable(name = "enviroment") String issueEnvironment,
+			@PathVariable(name = "category") String issueCategory) {
+		Set<IssueType> issues = new HashSet<IssueType>();
+		issues.addAll(
+				issueTypeRepo.findAllByIssueEnvironmentAndIssueCategoryAllIgnoreCase(issueEnvironment, issueCategory));
+		return issues;
+
+	}
+
 	@RequestMapping("/api/issues/category/{category}")
 	public Iterable<IssueType> findIssueTypesByCategory(@PathVariable(name = "category") String issueCategory) {
 
