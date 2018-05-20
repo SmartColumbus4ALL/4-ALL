@@ -70,14 +70,11 @@ function getIssueTypes(environment, category) {
           sendReport(item.id);
         });
 
-        let list = document.createElement("li");
-        list.innerHTML = item.typeOfIssue;
+        let span = document.createElement("span");
+        span.innerHTML = item.typeOfIssue;
 
-        // let img = document.createElement("img");
-        // img.src= "../image/" + item.typeOfIssue.toLowerCase() + ".png";
 
-        // child.appendChild(img);
-        child.appendChild(list);
+        child.appendChild(span);
 
         typeOfIssues.appendChild(child);
       })
@@ -107,14 +104,14 @@ function getCategories(environment) {
           getIssueTypes(environment, item);
         });
 
-        let list = document.createElement("li");
-        list.innerHTML = item;
+        let span = document.createElement("span");
+        span.innerHTML = item;
 
         let img = document.createElement("img");
         img.src= "../image/" + item + ".png";
 
         child.appendChild(img);
-        child.appendChild(list);
+        child.appendChild(span);
 
         categories.appendChild(child);
       })
@@ -133,26 +130,20 @@ function getEnvironments() {
       let response = JSON.parse(this.responseText);
       let element = document.getElementById('top-level');
 
-      let title = document.createElement('p');
-      title.innerText = 'Choose an environment';
-      element.appendChild(title);
-
-      let unordered = document.createElement('ul');
-
       response.forEach(item => {
         let child = document.createElement("button");
         child.addEventListener("click", function() {
           getCategories(item);
         });
 
-        let list = document.createElement("li");
-        list.innerHTML = item;
+        let span = document.createElement("span");
+        span.innerHTML = item;
 
         let img = document.createElement("img");
         img.src= "../image/" + item + ".png";
 
         child.appendChild(img);
-        child.appendChild(list);
+        child.appendChild(span);
 
         element.appendChild(child);
       })
