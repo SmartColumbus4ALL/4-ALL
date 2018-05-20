@@ -10,6 +10,7 @@ public class IssuePopulator implements CommandLineRunner {
 	@Resource
 	IssueTypeRepository issueTypeRepo;
 
+	// TODO Make this idempotent
 	@Override
 	public void run(String... args) throws Exception {
 		issueTypeRepo.save(new IssueType("outdoor", "Sidewalk", "Debris in sidewalk", "Trash Collection"));
