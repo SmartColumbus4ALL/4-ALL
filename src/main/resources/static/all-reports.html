@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Reports</title>
+</head>
+<body>
+	<div class="reports-list" th:each="category: ${reportss}">
+		<section class="category">
+			<h3 class="category-title">
+				<a th:href="@{/category(id=${category.id})}" th:text="${category.name}"></a>
+			</h3>
+		</section>
+	</div>
+	
+
+</body>
+</html>

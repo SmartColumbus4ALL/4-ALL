@@ -64,6 +64,10 @@ public class ObstacleReport {
 		return streetAddress;
 	}
 
+	public String getDate() {
+		return reportDate.toString();
+	}
+
 	public LocalDate getReportDate() {
 		return reportDate;
 	}
