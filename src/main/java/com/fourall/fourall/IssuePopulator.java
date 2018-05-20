@@ -12,12 +12,16 @@ public class IssuePopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		issueTypeRepo.save(new IssueType("outdoor", "Sidewalk", "Debris in sidewalk", "Trash Collection"));
-		issueTypeRepo.save(new IssueType("outdoor", "Sidewalk", "Damaged Crosswalk", "Road Repair"));
-		issueTypeRepo.save(new IssueType("outdoor", "Sidewalk", "Missing Sidewalk", "City Planning"));
-		issueTypeRepo.save(new IssueType("outdoor", "Building", "Entrance not accessable", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("outdoor", "Building", "Missing handrail", "Code Enforcement"));
-		issueTypeRepo.save(new IssueType("indoor", "Building", "Inaccessable restroom", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "sidewalk", "Debris in Sidewalk", "Trash Collection"));
+		issueTypeRepo.save(new IssueType("outdoor", "sidewalk", "Damaged Crosswalk", "Road Repair"));
+		issueTypeRepo.save(new IssueType("outdoor", "sidewalk", "Missing Sidewalk", "City Planning"));
+		issueTypeRepo.save(new IssueType("outdoor", "sidewalk", "Other", "City Planning"));
+		issueTypeRepo.save(new IssueType("outdoor", "ramp", "Entrance not Accessable", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "ramp", "Other", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "handrail", "Missing Handrail", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("outdoor", "handrail", "Other", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("indoor", "door", "Broken Door", "Code Enforcement"));
+		issueTypeRepo.save(new IssueType("indoor", "door", "Other", "Code Enforcement"));
 
 	}
 
