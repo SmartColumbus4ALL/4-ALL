@@ -48,6 +48,7 @@ public class ObstacleReportController {
 		double lng = jsonReport.get("longitude").asDouble();
 		String address = jsonReport.get("streetAddress").asText();
 		Long issueId = jsonReport.get("issueId").asLong();
+
 		IssueType reportIssue = issueTypeRepo.findOne(issueId);
 
 		ObstacleReport createdReport = new ObstacleReport(lat, lng, address, LocalDate.now(), reportIssue);
