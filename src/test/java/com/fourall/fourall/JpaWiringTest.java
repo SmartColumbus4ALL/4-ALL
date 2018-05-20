@@ -22,7 +22,7 @@ public class JpaWiringTest {
 	@Resource
 	private ObstacleReportRepository obstacleReportRepo;
 
-	IssueType testIssueType = new IssueType("Test Catergory", "Test", "Mock");
+	IssueType testIssueType = new IssueType("Test Setting", "Test Catergory", "Test", "Mock");
 
 	@Before
 	public void setup() {
